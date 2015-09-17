@@ -9,7 +9,7 @@ use Carp qw/carp croak/;
 
 BEGIN {
   $Crypt::Random::Seed::AUTHORITY = 'cpan:DANAJ';
-  $Crypt::Random::Seed::VERSION = '0.03';
+  $Crypt::Random::Seed::VERSION = '0.04';
 }
 
 use base qw( Exporter );
@@ -65,8 +65,8 @@ sub new {
     my @methodlist = (
        \&_try_win32,
        \&_try_egd,
-       \&_try_dev_random,
        \&_try_dev_urandom,
+       \&_try_dev_random,
        \&_try_tesha2,
     );
 
